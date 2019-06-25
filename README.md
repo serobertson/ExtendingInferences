@@ -3,7 +3,7 @@ Example R code to implement estimators in *Extending inferences from a randomize
 
 Required R package is geex (to get the sandwich variance)
 
-1. simulated_example_github.R: Example to implement the estimators
+1. simulated_example_github.R: Example code to implement the estimators
 
 2. simulated_example.csv: Example simulated data to download and apply the estimators 
 
