@@ -7,10 +7,10 @@ local scenariocount=1
 /****** SIMULATION ******/
 quietly { 
 foreach true_tx_effect in  1   {	
-	foreach true_interaction_effect in /* 0 */ 1   {
-		foreach n_trial in   200  /* 500  1000 */  {
-			foreach n_total in 2000  /*  5000   10000  */ {
-				foreach selection_effect in   0   /*  1 */  {
+	foreach true_interaction_effect in  0  1   {
+		foreach n_trial in   200   500  1000  {
+			foreach n_total in 2000   5000   10000  {
+				foreach selection_effect in   0    1  {
 
 tempname saved_results 
 
