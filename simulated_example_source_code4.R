@@ -275,7 +275,6 @@ DR2_EE <- function(data){
     m_A0<-X %*% alpha
     ols_A1 <-crossprod(X, (S*A)*(Y - m_A1))
     ols_A0 <-crossprod(X, (S*(1-A))*(Y - m_A0))
-    #normalizing term
     mu_S<-theta[17]
     propS1<-S-mu_S
     one_over<-(1/(1-mu_S))
