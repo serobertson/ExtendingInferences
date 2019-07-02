@@ -1,4 +1,3 @@
-
 #source('~/simulated_example_source_code4.R')
 DF <- read.csv(file="simulated_data.csv", header=TRUE, sep=",",na.string = "")
 
@@ -25,12 +24,12 @@ DR1<-DR1_est(data=DF2)
 DR2<-DR2_est(data=DF2)
 DR3<-DR3_est(data=DF2)
 
-#Estimates of potential outcome Y^1
+#Estimates of mu(1)
 results_1<-rbind(OM_1=OM$OM_1, IOW1_1=IOW1$IOW1_1, IOW2_1=IOW2$IOW2_1,
                DR1_1=DR1$DR1_1, DR2_1=DR2$DR2_1,  DR3_1=DR3$DR3_1)
 print(results_1) 
 
-#Estimates of potential outcome Y^0
+Estimates of mu(0)
 results_0<-rbind(OM_0=OM$OM_0, IOW1_0=IOW1$IOW1_0, IOW2_0=IOW2$IOW2_0,
                DR1_0=DR1$DR1_0, DR2_0=DR2$DR2_0,  DR3_0=DR3$DR3_0)
 print(results_0)
