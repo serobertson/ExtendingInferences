@@ -10,8 +10,6 @@ DF$d_pop<-NULL
 DF$d_out<-NULL
 DF$Y_1<-NULL
 DF$Y_0<-NULL
-
-
 weights<-generate_weights(Smod=S~X1+X2+X3,Amod=A~X1+X2+X3, data=DF)
 
 DF2<-weights$dat
@@ -41,6 +39,9 @@ print(results_0)
 results<-rbind(OM=OM$OM, IOW1=IOW1$IOW1, IOW2=IOW2$IOW2,
                  DR1=DR1$DR1, DR2=DR2$DR2,  DR3=DR3$DR3)
 print(results)
+
+
+
 #-------sandwich variance------#
 
 library("geex")
@@ -62,7 +63,7 @@ OM_m1<-extractEST(geex_output=OM_mest, est_name="m1",param_start=param_start_OM)
 OM_m0<-extractEST(geex_output=OM_mest, est_name="m0",param_start=param_start_OM)
 OM_ate<-extractEST(geex_output=OM_mest, est_name="ate",param_start=param_start_OM)
 
-#---------------------
+
 #IOW1 
 
 (param_start_IOW1<-c(coef(weights$Smod) , coef(weights$Amod),
@@ -80,6 +81,7 @@ IOW1_mest <-m_estimate(
 IOW1_m1<-extractEST(geex_output=IOW1_mest, est_name="m1",param_start=param_start_IOW1)
 IOW1_m0<-extractEST(geex_output=IOW1_mest, est_name="m0",param_start=param_start_IOW1)
 IOW1_ate<-extractEST(geex_output=IOW1_mest, est_name="ate",param_start=param_start_IOW1)
+
 
 #IOW2 sandwich variance
 
@@ -101,7 +103,6 @@ IOW2_m0<-extractEST(geex_output=IOW2_mest, est_name="m0",param_start=param_start
 IOW2_ate<-extractEST(geex_output=IOW2_mest, est_name="ate",param_start=param_start_IOW2)
 
 
-#---------------------
 #DR1
 
 (coef_DR1est<-c(coef(OM$OM1mod), coef(OM$OM0mod), m1=DR1$DR1_1, m0=DR1$DR1_0, ate=DR1$DR1))
@@ -122,7 +123,6 @@ DR1_m0<-extractEST(geex_output=DR1_mest, est_name="m0",param_start=param_start_D
 DR1_ate<-extractEST(geex_output=DR1_mest, est_name="ate",param_start=param_start_DR1)
 
 
-#-----------------------
 #DR2
 
 param_start_DR2<-c(coef(weights$Smod), coef(weights$Amod), 0.5, 0.5, 0.5,
@@ -142,8 +142,9 @@ DR2_m1<-extractEST(geex_output=DR2_mest, est_name="m1",param_start=param_start_D
 DR2_m0<-extractEST(geex_output=DR2_mest, est_name="m0",param_start=param_start_DR2)
 DR2_ate<-extractEST(geex_output=DR2_mest, est_name="ate",param_start=param_start_DR2)
 
-#--------------------------------------------------------------------
+
 #DR3
+
 param_start_DR3<-c(coef(weights$Smod) , coef(weights$Amod), 
                    coef(DR3$DR1mod), coef(DR3$DR0mod),
                    m1=DR3$DR3_1, m0=DR3$DR3_0, ate=DR3$DR3)
@@ -172,10 +173,3 @@ print(summary_results0)
 #Estimates of ate
 summary_results<-data.frame(OM_ate, IOW1_ate, IOW2_ate, DR1_ate,DR2_ate, DR3_ate)
 print(summary_results)
-
-
-
-
-
-
-
