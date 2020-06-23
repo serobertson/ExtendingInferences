@@ -1,5 +1,5 @@
 # ExtendingInferences
-A. Example R code to implement estimators in *Extending inferences from a randomized trial to a new target population.* Issa J Dahabreh, Sarah E Robertson, Elizabeth A Stuart, and Miguel A Hernán. https://arxiv.org/pdf/1709.04589.pdf
+A. Example R code to implement estimators in *Extending inferences from a randomized trial to a new target population.* Issa J Dahabreh, Sarah E Robertson, Jon A Steingrimsson, Elizabeth A Stuart, and Miguel A Hernán. Statistics in Medicine (2020).  https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.8426
 
 Required R package is geex (to get the sandwich variance)
 
